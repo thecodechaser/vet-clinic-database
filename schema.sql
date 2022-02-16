@@ -11,8 +11,16 @@ CREATE TABLE animals (
     PRIMARY KEY(ID)
 );
 
-ALTER TABLE animals ADD species_id varchar(100);
-ALTER TABLE animals ADD owners_id varchar(100);
+ALTER TABLE animals ADD species varchar(100);
+ALTER TABLE animals DROP species;
+
+--Add column species_id which is a foreign key referencing the species table
+ALTER TABLE animals ADD species_id INT,
+ADD CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id);
+
+--Add column owner_id which is a foreign key referencing the owners table
+ALTER TABLE animals ADD owner_id INT,
+ADD CONSTRAINT fk_owners FOREIGN KEY(owner_id) REFERENCES owners(id);
 
 
 /* owners table */
