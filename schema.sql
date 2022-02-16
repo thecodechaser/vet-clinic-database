@@ -2,15 +2,17 @@
 
 /* animals table */
 CREATE TABLE animals (
-    ID INT PRIMARY KEY,
+    ID INT AUTO_INCREMENT,
     name varchar(100),
     date_of_birth date,
     escape_attempts INT,
     neutered bit,
     weight_kg decimal,
+    PRIMARY KEY(ID)
 );
 
-ALTER TABLE animals ADD species varchar;
+ALTER TABLE animals ADD species_id INT;
+ALTER TABLE animals ADD owners_id INT;
 
 
 /* owners table */
