@@ -43,3 +43,15 @@ SELECT MAX(species) FROM animals GROUP BY species;
 SELECT AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN Jan 1, 1990 AND Dec 31, 2000 GROUP BY species;
 
 
+BEGIN;
+UPDATE animals SET species_id = 'Digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 'Pokemon' WHERE species IS NULL;
+COMMIT;
+
+BEGIN;
+UPDATE animals SET owners_id = 'Sam Smith' WHERE name = 'Agumon';
+UPDATE animals SET owners_id = 'Jennifer Orwell' WHERE name = 'Gabumon', 'Pikachu';
+UPDATE animals SET owners_id = 'Bob' WHERE name = 'Devimon', 'Plantmon';
+UPDATE animals SET owners_id = 'Melody Pond' WHERE name = 'Charmander', 'Squirtle', 'Blossom';
+UPDATE animals SET owners_id = 'Dean Winchester' WHERE name = 'Angemon', 'Boarmon';
+COMMIT;

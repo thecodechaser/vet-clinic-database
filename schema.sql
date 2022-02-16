@@ -11,8 +11,8 @@ CREATE TABLE animals (
     PRIMARY KEY(ID)
 );
 
-ALTER TABLE animals ADD species_id INT;
-ALTER TABLE animals ADD owners_id INT;
+ALTER TABLE animals ADD species_id varchar(100);
+ALTER TABLE animals ADD owners_id varchar(100);
 
 
 /* owners table */
