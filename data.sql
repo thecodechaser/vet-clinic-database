@@ -23,3 +23,17 @@ INSERT INTO owners VALUES (full_name, age) ('Jodie Whittaker', 38);
 /* Insert data to species table */
 INSERT INTO species VALUES (name) ('Pokemon');
 INSERT INTO species VALUES (name) ('Digimon');
+
+/* Modify animals table */
+BEGIN;
+UPDATE animals SET species_id = 'Digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 'Pokemon' WHERE species IS NULL;
+COMMIT;
+
+BEGIN;
+UPDATE animals SET owners_id = 'Sam Smith' WHERE name = 'Agumon';
+UPDATE animals SET owners_id = 'Jennifer Orwell' WHERE name = 'Gabumon', 'Pikachu';
+UPDATE animals SET owners_id = 'Bob' WHERE name = 'Devimon', 'Plantmon';
+UPDATE animals SET owners_id = 'Melody Pond' WHERE name = 'Charmander', 'Squirtle', 'Blossom';
+UPDATE animals SET owners_id = 'Dean Winchester' WHERE name = 'Angemon', 'Boarmon';
+COMMIT;
