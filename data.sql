@@ -19,3 +19,7 @@ INSERT INTO owners VALUES (full_name, age) ('Bob', 45);
 INSERT INTO owners VALUES (full_name, age) ('Melody Pond', 77);
 INSERT INTO owners VALUES (full_name, age) ('Dean Winchester', 14);
 INSERT INTO owners VALUES (full_name, age) ('Jodie Whittaker', 38);
+
+/* Insert data to species table */
+INSERT INTO species VALUES (name) ('Pokemon');
+INSERT INTO species VALUES (name) ('Digimon');
