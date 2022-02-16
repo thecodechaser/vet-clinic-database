@@ -15,7 +15,16 @@ ALTER TABLE animals ADD species varchar;
 
 /* owners table */
 CREATE TABLE owners (
-    ID INT,
+    ID INT AUTO_INCREMENT,
     full_name varchar(100),
-    age INT
+    age INT,
+    PRIMARY KEY(ID)
+);
+
+/* soecies table */
+
+CREATE TABLE species (
+    ID INT AUTO_INCREMENT,
+    name varchar(100),
+    PRIMARY KEY(ID)
 );
