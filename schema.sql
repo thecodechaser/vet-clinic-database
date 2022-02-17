@@ -55,3 +55,11 @@ CREATE TABLE specializations(
   FOREIGN KEY (species_id) REFERENCES species (id) ON DELETE RESTRICT ON UPDATE CASCADE,
 )
 
+/* visits table */
+CREATE TABLE visits(
+  vets_id integer NOT NULL,
+  animals_id integer NOT NULL,
+  date_of_visit date,
+  FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (animals_id) REFERENCES animals (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+)
