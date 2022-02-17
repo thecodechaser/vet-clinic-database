@@ -32,7 +32,6 @@ CREATE TABLE owners (
 );
 
 /* species table */
-
 CREATE TABLE species (
     ID INT AUTO_INCREMENT,
     name varchar(100),
@@ -40,7 +39,6 @@ CREATE TABLE species (
 );
 
 /* vets table */
-
 CREATE TABLE vets (
     ID INT AUTO_INCREMENT,
     name varchar(300),
@@ -48,3 +46,12 @@ CREATE TABLE vets (
     date_of_graduation date.
     PRIMARY KEY(ID)
 );
+
+/* specialization table */
+CREATE TABLE specializations(
+  vets_id integer NOT NULL,
+  species_id integer NOT NULL,
+  FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (species_id) REFERENCES species (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+)
+
