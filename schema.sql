@@ -31,10 +31,20 @@ CREATE TABLE owners (
     PRIMARY KEY(ID)
 );
 
-/* soecies table */
+/* species table */
 
 CREATE TABLE species (
     ID INT AUTO_INCREMENT,
     name varchar(100),
+    PRIMARY KEY(ID)
+);
+
+/* vets table */
+
+CREATE TABLE vets (
+    ID INT AUTO_INCREMENT,
+    name varchar(300),
+    age INT,
+    date_of_graduation date.
     PRIMARY KEY(ID)
 );
