@@ -4,6 +4,9 @@
 
 > Vet Clinic Database is SQL relational database that has animal table with some data, And quaries to get data from the table.
 
+## Schema Diagram
+
+![vets_clinic_schema](https://user-images.githubusercontent.com/43995830/155158010-4f95a4e6-1b97-4f54-9190-0f660f1e3f24.png)
 
 ## Getting Started
 
