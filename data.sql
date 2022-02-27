@@ -71,3 +71,22 @@ INSERT INTO visits(vets_id, animals_id, date_of_visit) VALUES (2, 9, 'Feb 27th, 
 INSERT INTO visits(vets_id, animals_id, date_of_visit) VALUES (2, 9, 'Aug 3rd, 2020');
 INSERT INTO visits(vets_id, animals_id, date_of_visit) VALUES (3, 10, 'May 24th, 2020');
 INSERT INTO visits(vets_id, animals_id, date_of_visit) VALUES (1, 10, 'Jan 11th, 2021');
+
+-- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
+INSERT INTO visits 
+  (animal_id, vet_id, date_of_visit) 
+  SELECT * 
+  FROM (SELECT id FROM animals) animal_ids, 
+    (SELECT id FROM vets) 
+    vets_ids, 
+    generate_series
+    ('1980-01-01'::timestamp, '2021-01-01', '4 hours') 
+    visit_timestamp;
+
+-- This will add 2.500.000 owners with full_name = 'Owner <X>' and email = 'owner_<X>@email.com' (~2min approx.)
+insert into owners 
+  (full_name, email) 
+  select 
+    'Owner ' || 
+    generate_series(1,2500000), 'owner_' || 
+    generate_series(1,2500000) || '@mail.com';
